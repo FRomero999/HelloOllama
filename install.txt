@@ -1,0 +1,15 @@
+# Descargar y ejecutar Ollama en un contenedor
+docker run -d \
+  --name ollama \
+  -p 11434:11434 \
+  -v ollama_data:/root/.ollama \
+  ollama/ollama
+
+
+docker exec -it ollama ollama pull llama3.2:1b
+
+docker exec -it ollama ollama list
+
+docker exec -it ollama ollama run llama3.2:1b
+
+
